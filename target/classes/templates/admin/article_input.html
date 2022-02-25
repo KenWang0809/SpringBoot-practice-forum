@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章新增</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/CSS/me.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+</head>
+<body>
+
+<!--導航-->
+<nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini">
+    <div class="ui container">
+        <div class="ui inverted secondary menu stackable">
+            <h2 class="ui header teal item ">文章發佈</h2>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="book icon"></i>文章</a>
+            <a href="#" class=" m-item item m-mobile-hide"><i class="idea icon"></i>分類</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tag icon"></i>電影分級</a>
+            <div class="m-item m-mobile-hide right menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="https://picsum.photos/id/1/100/100" class="ui avatar image">
+                        王家瑋
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<div class="ui attached menu pointing">
+    <div class="ui container">
+        <div class="right menu pointing">
+            <a href="#" th:href="@{/admin/articles/input}" class="item active teal ">新增</a>
+            <a href="#" th:href="@{/admin/articles}" class="item ">列表</a>
+        </div>
+    </div>
+</div>
+
+<!--中間內容-->
+<div class="m-padded-tb-large m-container">
+    <div class="ui container">
+        <form id="article-form" action="#" th:action="@{/admin/articles}" th:object="${article}" method="post" class="ui form">
+            <input type="hidden" name="published">
+            <input type="hidden" name="id" th:value="*{id}">
+            <div class="required field">
+                <div class="ui left labeled input">
+                    <label class="ui label selection dropdown teal basic compact">
+                        <i class="dropdown icon"></i>
+                        <input type="hidden"  name="flag" th:value="*{flag}">
+                        <div class="text" >來源</div>
+                        <div class="ui menu">
+                            <div class="item " data-value="原創" th:data-value="原創" th:text="原創" >原創</div>
+                            <div class="item" data-value="轉載" th:data-value="轉載" th:text="轉載">轉載</div>
+                            <div class="item" data-value="翻譯" th:data-value="翻譯" th:text="翻譯">翻譯</div>
+                        </div>
+
+                    </label>
+                    <input type="text" name="title" placeholder="標題" th:value="*{title}">
+                </div>
+            </div>
+
+            <div class="field">
+                <div id="md-content" style="z-index: 1 !important;">
+                    <textarea style="display:none" name="content" placeholder="文章內容" th:text="*{content}"></textarea>
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <div class="ui left labeled input">
+                        <label class="ui label teal basic compact">分類</label>
+                        <div class="ui selection multiple search dropdown fluid ">
+                            <input type="hidden" name="tagIds" th:value="*{tagIds}">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">分類</div>
+                            <div class="ui menu">
+                                <div th:each="tag : ${tags}" class="item" data-value="1" th:data-value="${tag.id}" th:text="${tag.name}">劇情片</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="ui left labeled input">
+                        <label class="ui label teal basic compact">電影分級</label>
+                        <div class="ui selection search dropdown fluid">
+                            <input type="hidden" name="type.id" th:value="*{type} == null ? null : *{type.id}">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">電影分級</div>
+                            <div class="ui menu">
+                                <div th:each="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">普遍級</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui labeled input">
+                    <label class="ui basic teal label">劇照</label>
+                    <input type="text" name="firstPicture" placeholder="劇照引用網址" th:value="*{firstPicture}">
+
+                </div>
+            </div>
+
+            <div class="inline fields">
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" class="hidden" checked id="recommend" name="recommend" th:checked="*{recommend}">
+                        <label for="recommend">推薦</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" class="hidden"  id="shareStatement" name="shareStatement" th:checked="*{shareStatement}">
+                        <label for="shareStatement">轉發聲明</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" class="hidden" id="appreciation" name="appreciation" th:checked="*{appreciation}">
+                        <label for="appreciation">讚賞</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" class="hidden" id="commentTable" name="commentTable" th:checked="*{commentTable}">
+                        <label for="commentTable">評論</label>
+                    </div>
+                </div>
+            </div>
+
+<!--            錯誤訊息-->
+            <div class="ui error message"></div>
+
+            <div class="ui container right aligned">
+<!--                不指定type預設為submit-->
+                <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                <button type="button" id="save-btn" class="ui button secondary">保存</button>
+                <button type="button" id="publish-btn" class="ui button teal">發佈</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="../../static/images/line_QRcode.jpg" alt="" width="110px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>最新部落格</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item ">Test的內容</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>聯絡方式</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Email: edlevisken@gmail.com</p>
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Line ID: edlevis402 </p>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4>最新部落格</h4>
+                <p class="m-opacity-mini m-text-spaced">這是我的個人部落格，主要會分享XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-opacity-mini m-text-spaced">Copyright © 2022 ChiaWei Wang. Designed by CWW.</p>
+    </div>
+</footer>
+
+<th:block th:replace="admin/_fragments :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</th:block>
+
+
+<script>
+<!--    初始化markdown編輯器-->
+var contentEditor;
+
+$(function() {
+    contentEditor = editormd('md-content', {
+        width   : "100%",
+        height  : 640,
+        syncScrolling : "single",
+        // path    : "../static/lib/editormd/lib/"
+        // thymleaf動態頁面使用servlet路徑當前綴
+        path    : "/lib/editormd/lib/"
+
+    });
+});
+
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide')
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'click'
+    })
+
+
+    $('#save-btn').click(function () {
+       $('[name="published"]').val(false);
+       $('#article-form').submit();
+    });
+
+    $('#publish-btn').click(function () {
+        $('[name="published"]').val(true);
+        $('#article-form').submit();
+    })
+
+
+
+    $('.ui.form').form({
+        fields : {
+            title : {
+                identifier : 'title',
+                rules : [{
+                    type : 'empty',
+                    prompt : '標題：請輸入文章標題！'
+                }]
+            },
+            content : {
+                identifier : 'content',
+                rules : [{
+                    type : 'empty',
+                    prompt : '內容：請輸入文章內容！'
+                }]
+            },
+            tagIds : {
+                identifier : 'tagIds',
+                rules : [{
+                    type : 'empty',
+                    prompt : '標題：請選擇分類！'
+                }]
+            },
+            type : {
+                identifier : 'type',
+                rules : [{
+                    type : 'empty',
+                    prompt : '標題：請選擇電影分級！'
+                }]
+            },
+            firstPicture : {
+                identifier : 'firstPicture',
+                rules : [{
+                    type : 'empty',
+                    prompt : '標題：請輸入電影劇照！'
+                }]
+            },
+            flag : {
+                identifier : 'flag',
+                rules : [{
+                    type : 'empty',
+                    prompt : '標題：請選擇來源！'
+                }]
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+#    只須加上application-，後綴的文字
+    active: dev
+  messages:
+    basename: i18n/messages
+
+
+
+
+
+
+comment.avatar: /images/avatar.jpg
+
+

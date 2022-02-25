@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/CSS/me.css">
+</head>
+<body>
+
+<!--導航-->
+<nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini">
+    <div class="ui container">
+        <div class="ui inverted secondary menu stackable">
+            <h2 class="ui header teal item ">後臺管理</h2>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="book icon"></i>文章</a>
+            <a href="#" class=" m-item item m-mobile-hide"><i class="idea icon"></i>分類</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tag icon"></i>電影分級</a>
+            <div class="m-item m-mobile-hide right menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="https://picsum.photos/id/1/100/100"  class="ui avatar image">
+                        王家瑋
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<div class="ui attached menu pointing">
+    <div class="ui container">
+        <div class="right menu pointing">
+            <a href="#" th:href="@{/admin/articles/input}" class="item">新增</a>
+            <a href="#" th:href="@{/admin/articles}" class="item active teal ">列表</a>
+        </div>
+    </div>
+</div>
+
+<!--中間內容-->
+<div class="m-padded-tb-large m-container-small">
+    <div class="ui container">
+        <div  class="ui segment form middle aligned">
+           <input type="hidden"  name="page">
+            <div class="inline fields">
+                <div class="filed">
+                    <input type="text" name="title" placeholder="標題">
+                </div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="field">
+                    <div class="ui selection  dropdown clear">
+                        <input type="hidden" name="typeId">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">電影分級</div>
+                        <div class="menu">
+                            <div th:each="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">普遍級</div>
+                            <!--/*-->
+                            <div class="item" data-value="2">保護級</div>
+                            <!--*/-->
+                        </div>
+                    </div>
+                    <button class="ui clear button ">清除</button>
+                </div>
+
+
+<!--                <div class="field">-->
+<!--                    <div class="ui multiple selection  dropdown clear">-->
+<!--                        <input type="hidden" name="tagIds">-->
+<!--                        <i class="dropdown icon"></i>-->
+<!--                        <div class="default text">分類</div>-->
+<!--                        <div class="menu">-->
+<!--                            <div th:each="tag : ${tags}" class="item" data-value="1" th:data-value="${tag.id}" th:text="${tag.name}">動作片</div>-->
+<!--                            &lt;!&ndash;/*&ndash;&gt;-->
+<!--                            <div class="item" data-value="2">保護級</div>-->
+<!--                            &lt;!&ndash;*/&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <button class="ui clear button ">清除</button>-->
+<!--                </div>-->
+
+
+
+
+
+
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" id="recommend" name="recommend">
+                        <label for="recommend">推薦</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <button type="button" id="search-btn" class="ui button teal basic "><i class="search icon"></i>搜尋</button>
+                </div>
+            </div>
+        </div>
+    <div id="table-container">
+        <table th:fragment="articleList" class="ui celled table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>標題</th>
+                <th>分類</th>
+                <th>推薦</th>
+                <th>草稿</th>
+                <th>發佈時間</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article,iterStat : ${page.content}">
+                <td th:text="${iterStat.count}">1</td>
+                <td th:text="${article.title}">今年3月東西兩大巨怪對決!</td>
+                <td th:text="${article.type.name}">普遍級</td>
+                <td th:text="${article.recommend} ? '是' : '否'">是</td>
+                <td th:text="${article.published} ? '已發佈' : '草稿'">草稿</td>
+                <td th:text="${article.updateTime}">2021-07-25 09:30</td>
+                <td>
+                    <a href="#" th:href="@{/admin/articles/{id}/input(id=${article.id})}" class="ui button teal basic mini">修改</a>
+                    <a href="#" th:href="@{/admin/articles/{id}/delete(id=${article.id})}" class="ui button red basic mini">刪除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <th colspan="7">
+                    <div class="ui pagination menu mini" th:if="${page.totalPages >1}">
+                        <a onclick="page(this)" th:attr="data-page=${page.number}-1"  class="item" th:unless="${page.first}">上一頁</a>
+                        <a onclick="page(this)" th:attr="data-page=${page.number}+1"  class="item" th:unless="${page.last}">下一頁</a>
+                    </div>
+                    <a href="#" th:href="@{/admin/articles/input}" class="ui button teal right floated mini">新增</a>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+
+
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${message}">恭喜，操作成功！</p>
+        </div>
+
+
+    </div>
+
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="../../static/images/line_QRcode.jpg" alt="" width="110px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>最新部落格</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>聯絡方式</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Email: edlevisken@gmail.com</p>
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Line ID: edlevis402 </p>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4>最新部落格</h4>
+                <p class="m-opacity-mini m-text-spaced">這是我的個人部落格，主要會分享XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-opacity-mini m-text-spaced">Copyright © 2022 ChiaWei Wang. Designed by CWW.</p>
+    </div>
+</footer>
+
+<th:bolck th:replace="admin/_fragments :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</th:bolck>
+
+
+
+<script>
+
+
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide')
+    });
+
+    $('.ui.dropdown').dropdown({
+        on : 'click'
+    });
+
+    $('.success.message').click(function () {
+        $(this).closest('.message').transition('fade')
+    });
+
+    $('.clear.button')
+        .on('click', function() {
+            $('.clear.ui.dropdown')
+                .dropdown('clear')
+            ;
+        })
+    ;
+
+
+
+    function page(obj){
+        $("[name = 'page']").val($(obj).data("page"));
+        loaddata();
+    }
+
+    $("#search-btn").click(function () {
+        $("[name = 'page']").val(0);
+        loaddata();
+    });
+
+    function loaddata(){
+        $("#table-container").load(/*[[@{/admin/articles/search}]]*/"/admin/articles/search",{
+            title : $("[name='title']").val(),
+            typeId : $("[name='typeId']").val(),
+            recommend : $("[name='recommend']").prop('checked'),
+            page : $("[name='page']").val()
+            // tagIds : $("[name='tagIds']").val()
+        });
+    }
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

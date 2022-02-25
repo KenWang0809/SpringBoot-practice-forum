@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">fragments</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../../static/CSS/me.css" th:href="@{/CSS/me.css}">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+</head>
+
+<!--導航-->
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini">
+    <div class="ui container">
+        <div class="ui inverted secondary menu stackable ">
+            <h2 class="ui header teal item ">後臺管理</h2>
+            <a href="#" th:href="@{/admin/articles}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="book icon"></i>文章</a>
+            <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>電影分級</a>
+            <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="video icon"></i>電影分類</a>
+            <div class="m-item m-mobile-hide right menu">
+                <div class="ui dropdown item">
+                    <div class="text ">
+                        <img src="https://picsum.photos/id/1/100/100"  th:src="${session.user.getAvatar()}" class="ui avatar image fluid left floated">
+                        <span type="text" class="ui text" th:text="${session.user.username}">王家瑋</span>
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" th:href="@{/admin/logout}" class="item">登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+<body>
+<footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="../static/images/line_QRcode.jpg" alt="" width="110px" th:src="@{/images/line_QRcode.jpg}">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>最新部落格</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>聯絡方式</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Email: edlevisken@gmail.com</p>
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Line ID: edlevis402 </p>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4>最新部落格</h4>
+                <p class="m-opacity-mini m-text-spaced">這是我的個人部落格，主要會分享XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-opacity-mini m-text-spaced">Copyright © 2022 ChiaWei Wang. Designed by CWW.</p>
+    </div>
+</footer>
+
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script src="../../static/lib/editormd/lib/codemirror/codemirror.min.js" th:src="@{/lib/editormd/lib/codemirror/codemirror.min.js}"></script>
+</th:block>
+
+
+</body>
+</html>

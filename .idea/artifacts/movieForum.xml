@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="movieForum">
+    <output-path>$USER_HOME$/Desktop/IDEA Project</output-path>
+    <root id="archive" name="movieForum.jar">
+      <element id="module-output" name="forum" />
+    </root>
+  </artifact>
+</component>

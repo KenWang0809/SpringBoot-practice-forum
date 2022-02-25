@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分類</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/CSS/me.css">
+</head>
+<body>
+
+<!--導航-->
+<nav th:replace="_fragments :: menu(2)" class="ui inverted attached segment m-padded-tb-mini">
+    <div class="ui container">
+        <div class="ui inverted secondary menu stackable">
+            <h2 class="ui header teal item ">Blog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首頁</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>電影分級</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tag icon"></i>類型</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="file icon"></i>歸檔</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>關於我</a>
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--中間內容-->
+<div class="m-padded-tb-large m-container-small">
+    <div class="ui container">
+        <div class="ui attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">電影分級</h3>
+                </div>
+                <div class="right aligned column">
+                    <!--                            因為h標籤預設是block，會換行，所以自定義為inline-block-->
+                    共 <h2  class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(types)}">14</h2>個
+                </div>
+            </div>
+        </div>
+        <div class="ui attached segment m-padded-tb-middle_big">
+            <div class="ui labeled button basic m-margin-tb-tiny" th:each="type : ${types}">
+                <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui button basic" th:classappend="${type.id==activeType} ? 'teal'" th:text="${type.name}">劇情片</a>
+                <div class="ui label left pointing basic " th:classappend="${type.id==activeType} ? 'teal'" th:text="${#arrays.length(type.articles)}">20</div>
+            </div>
+<!--/*-->
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+            <div class="ui labeled button teal basic m-margin-tb-tiny">
+                <a href="" class="ui button teal basic">劇情片</a>
+                <div class="ui label left pointing basic teal">20</div>
+            </div>
+<!--*/-->
+        </div>
+
+        <div class="ui top attached segment teal">
+            <div class="ui padded vertical segment" th:each="article : ${page.content}">
+                <!--                        mobile reversed在縮小可以將本來在下面的部份 (five wide column)移轉到上面呈現-->
+                <div class="ui middle aligned grid mobile reversed stackable">
+                    <div class="eleven wide column">
+                        <h3>
+                            <a href="#" target="_blank" th:text="${article.title}" th:href="@{/article/{id}(id=${article.id})}" style="color: #0a001f">
+                                《復仇者聯盟4》30秒全新預告釋出！鋼鐵人、鷹眼、蟻人強勢回歸暗藏二大彩蛋
+                            </a>
+                        </h3>
+                        <!--                                th:text="|${article.description}.....|"-->
+                        <p class="m-text" th:text="${#strings.substring(article.content,0,80) + '....'}">預告中還藏有一個非常深的小巧思，在片頭我們看到漫威MARVEL的
+                            字體像是《復仇者聯盟3》片尾的英雄們一樣灰化消散，但在預告片尾，原本消散
+                            變成碎片的復仇者AVENGERS字體漸漸重組、復原，似乎象徵著原本被薩諾斯徹底瓦
+                            解的復仇者們，將會在最後一集扭轉過去的命運？</p>
+                        <div class="ui grid ">
+                            <div class="eleven wide column">
+                                <div class="ui horizontal link list ">
+                                    <div class="item">
+                                        <img src="https://picsum.photos/id/1/100/100" th:src="@{${article.user.avatar}}" alt="" class="ui avatar image">
+                                        <div class="content"><a href="#" class="header" th:text="${article.user.nickname}">王家瑋</a></div>
+                                    </div>
+                                    <div class="item">
+                                        <i class="calendar icon top aligned"></i>
+                                        <span  th:text="${#dates.format(article.updateTime,'yyyy-MM-dd')}">2022-01-11</span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="eye icon top aligned "></i>
+                                        <span th:text="${article.views}">243</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="five wide column right aligned">
+                                <a href="#" class="ui teal basic label m-padded-mini" >
+                                            <span th:text="${article.type.name}">
+                                                Marvel
+                                            </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <a href="#" th:href="@{/article/{id}(id=${article.id})}" target="_blank">
+                            <img src="https://picsum.photos/id/1/800/450" th:src="@{${article.firstPicture}}" alt="" class="ui rounded image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--                Footer-->
+        <div class="ui bottom attached segment">
+            <div class="ui middle aligned two column grid" th:if="${page.totalPages > 1}">
+                <div class="column">
+                    <a href="#" th:href="@{/types/(page=${page.number}-1)}" th:unless="${page.first}" class="ui teal basic button">上一頁</a>
+                </div>
+                <div class="right aligned column">
+                    <a href="#" th:href="@{/types/(page=${page.number}+1)}" th:unless="${page.last}" class="ui teal basic button">下一頁</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="item">
+                    <img src="../static/images/line_QRcode.jpg" alt="" width="110px">
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>最新部落格</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                    <a href="" class="item">Test的內容</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4>聯絡方式</h4>
+                <div class="ui inverted link list m-text-thin m-text-spaced">
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Email: edlevisken@gmail.com</p>
+                    <p class="m-p-inline-block m-opacity-mini  m-font-size-12px">Line ID: edlevis402 </p>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4>最新部落格</h4>
+                <p class="m-opacity-mini m-text-spaced">這是我的個人部落格，主要會分享XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-opacity-mini m-text-spaced">Copyright © 2022 ChiaWei Wang. Designed by CWW.</p>
+    </div>
+</footer>
+
+<th:block th:replace="_fragments :: script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</th:block>
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide')
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

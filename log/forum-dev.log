@@ -1,0 +1,665 @@
+2022-02-18 14:29:53.929  INFO 6592 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 6592 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 14:29:53.929 DEBUG 6592 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 14:29:53.929  INFO 6592 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 14:29:53.976  INFO 6592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-18 14:29:53.976  INFO 6592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-18 14:29:54.663  INFO 6592 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 14:29:54.739  INFO 6592 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2022-02-18 14:29:55.364  INFO 6592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 14:29:55.364  INFO 6592 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 14:29:55.364  INFO 6592 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 14:29:55.503  INFO 6592 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 14:29:55.503  INFO 6592 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1527 ms
+2022-02-18 14:29:55.644  INFO 6592 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 14:29:55.711  INFO 6592 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-18 14:29:55.862  INFO 6592 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-18 14:29:55.951  INFO 6592 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 14:29:56.277  INFO 6592 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 14:29:56.293  INFO 6592 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 14:29:57.097  INFO 6592 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 14:29:57.105  INFO 6592 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 14:29:57.918  WARN 6592 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 14:29:58.163  INFO 6592 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 14:29:58.470  INFO 6592 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 14:29:58.498  INFO 6592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 14:29:58.505  INFO 6592 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 5.069 seconds (JVM running for 5.837)
+2022-02-18 14:32:47.947  INFO 6592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 14:32:47.947  INFO 6592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 14:32:47.949  INFO 6592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-18 14:32:47.980  INFO 6592 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 14:32:48.056  WARN 6592 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 14:32:48.066  WARN 6592 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 14:32:48.072  INFO 6592 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 14:32:52.466  INFO 6592 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:32:52.495  INFO 6592 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:32:53.113  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:32:53.142  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 14:33:31.231  INFO 6592 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:33:31.242  INFO 6592 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 14:33:31.819  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:33:31.830  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:33:32.311  INFO 6592 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 14:33:32.326  INFO 6592 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 14:33:32.771  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:33:32.780  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:33:34.259  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:33:34.274  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 14:33:36.454  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 14:33:36.471  INFO 6592 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 14:38:23.776  INFO 6592 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:38:23.785  INFO 6592 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:38:25.611  INFO 6592 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/27', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 27, {}]} 
+2022-02-18 14:38:25.624  INFO 6592 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:38:52.394  INFO 6592 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/25', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 25, {}]} 
+2022-02-18 14:38:52.403  INFO 6592 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:38:53.769  INFO 6592 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 14:38:53.779  INFO 6592 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 14:52:52.883  INFO 6592 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 14:52:52.883  INFO 6592 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 14:52:52.883  INFO 6592 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 14:52:56.206  INFO 13636 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 13636 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 14:52:56.206 DEBUG 13636 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 14:52:56.206  INFO 13636 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 14:52:56.238  INFO 13636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-18 14:52:56.238  INFO 13636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-18 14:52:56.753  INFO 13636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 14:52:56.800  INFO 13636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2022-02-18 14:52:57.300  INFO 13636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 14:52:57.300  INFO 13636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 14:52:57.300  INFO 13636 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 14:52:57.425  INFO 13636 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 14:52:57.425  INFO 13636 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1187 ms
+2022-02-18 14:52:57.550  INFO 13636 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 14:52:57.566  INFO 13636 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-18 14:52:57.659  INFO 13636 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-18 14:52:57.722  INFO 13636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 14:52:57.988  INFO 13636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 14:52:58.003  INFO 13636 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 14:52:58.550  INFO 13636 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 14:52:58.566  INFO 13636 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 14:52:59.378  WARN 13636 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 14:52:59.612  INFO 13636 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 14:52:59.894  INFO 13636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 14:52:59.925  INFO 13636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 14:52:59.925  INFO 13636 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 4.041 seconds (JVM running for 4.595)
+2022-02-18 14:53:10.749  INFO 13636 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 14:53:10.749  INFO 13636 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 14:53:10.750  INFO 13636 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-18 14:53:10.776  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 14:53:10.855  WARN 13636 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 14:53:10.865  WARN 13636 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 14:53:10.873  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 14:53:11.288  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:53:11.294  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:53:14.382  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 14:53:14.417  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:53:14.640  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:53:14.641  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 14:53:14.645  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:53:14.695  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:53:20.138  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[85, {}]} 
+2022-02-18 14:53:20.149  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:53:20.359  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:53:20.359  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[85, {}]} 
+2022-02-18 14:53:20.363  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:53:20.373  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:53:23.699  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/82', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[82, {}]} 
+2022-02-18 14:53:23.711  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:53:23.953  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:53:23.953  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/82', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[82, {}]} 
+2022-02-18 14:53:23.955  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:53:23.957  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:53:27.303  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 14:53:27.315  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:53:27.519  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:53:27.519  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 14:53:27.523  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:53:27.551  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:53:43.876  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/83', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[83, {}]} 
+2022-02-18 14:53:43.886  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:53:44.089  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:53:44.089  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/83', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[83, {}]} 
+2022-02-18 14:53:44.092  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:53:44.097  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:54:44.188  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/83', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[83, {}]} 
+2022-02-18 14:54:44.199  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:54:44.411  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:54:44.412  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/83', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[83, {}]} 
+2022-02-18 14:54:44.414  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:54:44.416  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:56:22.889  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/search', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.search', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}, 素]} 
+2022-02-18 14:56:22.901  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return search----
+2022-02-18 14:56:23.058  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:56:23.060  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:56:38.056  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/82', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[82, {}]} 
+2022-02-18 14:56:38.066  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 14:56:38.295  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:56:38.295  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/82', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[82, {}]} 
+2022-02-18 14:56:38.298  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 14:56:38.299  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 14:57:51.892  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 14:57:51.908  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 14:57:52.034  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 14:57:52.037  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:09.212  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[85, {}]} 
+2022-02-18 15:01:09.223  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:01:09.353  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[85, {}]} 
+2022-02-18 15:01:09.353  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:09.358  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:09.358  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:01:14.898  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:01:14.911  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:01:15.070  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:15.075  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:18.142  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 15:01:18.152  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 15:01:18.281  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:18.285  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:18.753  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 15:01:18.774  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 15:01:18.921  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:18.924  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:19.440  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:19.445  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:20.305  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:01:20.322  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:01:20.473  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:20.477  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:39.028  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 15:01:39.037  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:01:39.248  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 15:01:39.248  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:01:39.252  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:01:39.278  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:04:09.597  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/27', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 27, {}]} 
+2022-02-18 15:04:09.612  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 15:04:09.757  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:09.760  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:04:10.193  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/26', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 26, {}]} 
+2022-02-18 15:04:10.200  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 15:04:10.359  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:10.364  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:04:16.838  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[118, {}]} 
+2022-02-18 15:04:16.848  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:04:17.054  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:17.054  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[118, {}]} 
+2022-02-18 15:04:17.056  INFO 13636 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:04:17.058  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:04:18.724  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[118, {}]} 
+2022-02-18 15:04:18.736  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:04:18.836  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:18.836  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[118, {}]} 
+2022-02-18 15:04:18.838  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:04:18.839  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:04:19.319  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[118, {}]} 
+2022-02-18 15:04:19.328  INFO 13636 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:04:19.459  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:19.459  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[118, {}]} 
+2022-02-18 15:04:19.460  INFO 13636 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:04:19.461  INFO 13636 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:04:32.666  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[118, {}]} 
+2022-02-18 15:04:32.676  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:04:32.785  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:32.785  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/118', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[118, {}]} 
+2022-02-18 15:04:32.787  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:04:32.791  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:04:39.629  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:04:39.643  INFO 13636 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:04:39.783  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:04:39.788  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:08:44.820  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/82', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[82, {}]} 
+2022-02-18 15:08:44.829  INFO 13636 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:08:45.071  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:08:45.071  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/82', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[82, {}]} 
+2022-02-18 15:08:45.074  INFO 13636 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:08:45.075  INFO 13636 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:11:52.542  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:11:52.556  INFO 13636 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:11:52.695  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:11:52.700  INFO 13636 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:23:45.202  INFO 13636 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:23:45.202  INFO 13636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 15:23:45.202  INFO 13636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 15:23:49.030  INFO 12144 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 12144 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 15:23:49.030 DEBUG 12144 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 15:23:49.030  INFO 12144 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 15:23:49.077  INFO 12144 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-18 15:23:49.077  INFO 12144 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-18 15:23:49.577  INFO 12144 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 15:23:49.624  INFO 12144 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-02-18 15:23:50.108  INFO 12144 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 15:23:50.108  INFO 12144 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 15:23:50.108  INFO 12144 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 15:23:50.186  INFO 12144 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 15:23:50.186  INFO 12144 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
+2022-02-18 15:23:50.296  INFO 12144 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 15:23:50.311  INFO 12144 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-18 15:23:50.389  INFO 12144 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-18 15:23:50.436  INFO 12144 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 15:23:50.702  INFO 12144 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 15:23:50.702  INFO 12144 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 15:23:51.217  INFO 12144 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 15:23:51.233  INFO 12144 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:23:51.952  WARN 12144 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 15:23:52.155  INFO 12144 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 15:23:52.389  INFO 12144 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 15:23:52.405  INFO 12144 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 15:23:52.420  INFO 12144 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 3.688 seconds (JVM running for 4.289)
+2022-02-18 15:24:04.265  INFO 12144 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 15:24:04.265  INFO 12144 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 15:24:04.266  INFO 12144 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-18 15:24:04.291  INFO 12144 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:24:04.367  WARN 12144 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:24:04.377  WARN 12144 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:24:04.386  INFO 12144 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:24:04.795  INFO 12144 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:24:04.801  INFO 12144 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:24:23.198  INFO 12144 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 15:24:23.229  INFO 12144 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:24:23.453  INFO 12144 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:24:23.453  INFO 12144 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 15:24:23.459  INFO 12144 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:24:23.508  INFO 12144 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:24:26.066  INFO 12144 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:24:26.083  INFO 12144 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:24:26.266  INFO 12144 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:24:26.271  INFO 12144 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:27:22.009  INFO 12144 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:27:22.027  INFO 12144 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:27:22.177  INFO 12144 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:27:22.183  INFO 12144 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:45:41.958  INFO 12144 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/83', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[83, {}]} 
+2022-02-18 15:45:41.970  INFO 12144 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:45:42.175  INFO 12144 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:45:42.176  INFO 12144 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/83', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[83, {}]} 
+2022-02-18 15:45:42.179  INFO 12144 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:45:42.181  INFO 12144 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:45:43.595  INFO 12144 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/84', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[84, {}]} 
+2022-02-18 15:45:43.608  INFO 12144 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 15:45:43.802  INFO 12144 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:45:43.803  INFO 12144 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/84', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[84, {}]} 
+2022-02-18 15:45:43.804  INFO 12144 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 15:45:43.808  INFO 12144 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:45:45.705  INFO 12144 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:45:45.721  INFO 12144 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:45:45.855  INFO 12144 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:45:45.864  INFO 12144 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:47:27.826  INFO 12144 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:47:27.843  INFO 12144 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:47:28.010  INFO 12144 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:47:28.014  INFO 12144 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:48:07.706  INFO 12144 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 15:48:07.725  INFO 12144 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 15:48:07.866  INFO 12144 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:48:07.870  INFO 12144 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:48:08.670  INFO 12144 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 15:48:08.691  INFO 12144 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 15:48:08.829  INFO 12144 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:48:08.833  INFO 12144 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:48:09.468  INFO 12144 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:48:09.479  INFO 12144 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:48:09.605  INFO 12144 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:48:09.610  INFO 12144 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:55:27.956  INFO 12144 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:55:27.956  INFO 12144 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 15:55:27.956  INFO 12144 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 15:55:31.395  INFO 15908 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 15908 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 15:55:31.395 DEBUG 15908 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 15:55:31.395  INFO 15908 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 15:55:31.442  INFO 15908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-18 15:55:31.442  INFO 15908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-18 15:55:31.958  INFO 15908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 15:55:32.004  INFO 15908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-02-18 15:55:32.473  INFO 15908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 15:55:32.489  INFO 15908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 15:55:32.489  INFO 15908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 15:55:32.614  INFO 15908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 15:55:32.614  INFO 15908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1172 ms
+2022-02-18 15:55:32.707  INFO 15908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 15:55:32.739  INFO 15908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-18 15:55:32.801  INFO 15908 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-18 15:55:32.864  INFO 15908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 15:55:33.114  INFO 15908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 15:55:33.129  INFO 15908 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 15:55:33.645  INFO 15908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 15:55:33.660  INFO 15908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:55:34.379  WARN 15908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 15:55:34.582  INFO 15908 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 15:55:34.801  INFO 15908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 15:55:34.832  INFO 15908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 15:55:34.832  INFO 15908 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 4.596 seconds (JVM running for 5.222)
+2022-02-18 15:55:42.895  INFO 15908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 15:55:42.895  INFO 15908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 15:55:42.896  INFO 15908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-18 15:55:42.920  INFO 15908 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:55:42.994  WARN 15908 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:55:43.006  WARN 15908 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:55:43.014  INFO 15908 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:55:43.460  INFO 15908 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:55:43.466  INFO 15908 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:58:16.920  INFO 15908 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:58:16.920  INFO 15908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 15:58:16.920  INFO 15908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 15:58:20.507  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 5656 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 15:58:20.507 DEBUG 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 15:58:20.507  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 15:58:20.538  INFO 5656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-18 15:58:20.538  INFO 5656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-18 15:58:21.038  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 15:58:21.085  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-02-18 15:58:21.553  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 15:58:21.553  INFO 5656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 15:58:21.553  INFO 5656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 15:58:21.663  INFO 5656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 15:58:21.663  INFO 5656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1125 ms
+2022-02-18 15:58:21.756  INFO 5656 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 15:58:21.788  INFO 5656 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-18 15:58:21.866  INFO 5656 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-18 15:58:21.913  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 15:58:22.163  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 15:58:22.178  INFO 5656 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 15:58:22.678  INFO 5656 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 15:58:22.678  INFO 5656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:58:23.381  WARN 5656 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 15:58:23.584  INFO 5656 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 15:58:23.819  INFO 5656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 15:58:23.834  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 15:58:23.850  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 4.593 seconds (JVM running for 5.212)
+2022-02-18 15:58:39.793  INFO 5656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 15:58:39.793  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 15:58:39.794  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-18 15:58:39.819  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:58:39.893  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:58:39.904  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:58:39.911  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:58:40.343  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:58:40.348  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:58:56.660  INFO 5656 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:58:56.663  INFO 5656 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 15:58:56.666  INFO 5656 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 15:58:56.868  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 5656 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 15:58:56.868 DEBUG 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 15:58:56.868  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 15:58:56.998  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 15:58:57.014  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 5 JPA repository interfaces.
+2022-02-18 15:58:57.134  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 15:58:57.134  INFO 5656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 15:58:57.135  INFO 5656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 15:58:57.145  INFO 5656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 15:58:57.145  INFO 5656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 274 ms
+2022-02-18 15:58:57.193  INFO 5656 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 15:58:57.196  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-02-18 15:58:57.213  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-02-18 15:58:57.213  INFO 5656 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 15:58:57.311  INFO 5656 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 15:58:57.311  INFO 5656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:58:57.668  WARN 5656 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 15:58:57.802  INFO 5656 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 15:58:57.952  INFO 5656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 15:58:57.965  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 15:58:57.969  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 1.124 seconds (JVM running for 39.328)
+2022-02-18 15:58:57.971  INFO 5656 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-18 15:58:58.113  INFO 5656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 15:58:58.115  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 15:58:58.116  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-18 15:58:58.121  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:58:58.143  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:58:58.148  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:58:58.154  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:58:58.324  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:58:58.330  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 15:59:23.951  INFO 5656 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:59:23.951  INFO 5656 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-02-18 15:59:23.966  INFO 5656 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-02-18 15:59:24.123  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 5656 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 15:59:24.123 DEBUG 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 15:59:24.123  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 15:59:24.248  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 15:59:24.263  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2022-02-18 15:59:24.357  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 15:59:24.357  INFO 5656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 15:59:24.357  INFO 5656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 15:59:24.373  INFO 5656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 15:59:24.373  INFO 5656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 250 ms
+2022-02-18 15:59:24.404  INFO 5656 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 15:59:24.419  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-02-18 15:59:24.435  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-02-18 15:59:24.435  INFO 5656 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 15:59:24.547  INFO 5656 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 15:59:24.547  INFO 5656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 15:59:24.861  WARN 5656 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 15:59:24.955  INFO 5656 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 15:59:25.080  INFO 5656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 15:59:25.089  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 15:59:25.092  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 0.977 seconds (JVM running for 66.451)
+2022-02-18 15:59:25.093  INFO 5656 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-18 15:59:26.462  INFO 5656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 15:59:26.465  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 15:59:26.465  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-18 15:59:26.468  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 15:59:26.487  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:59:26.493  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 15:59:26.499  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 15:59:26.554  WARN 5656 --- [http-nio-8080-exec-1] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [messages] not found for MessageSource: Can't find bundle for base name messages, locale en_US
+2022-02-18 15:59:26.715  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 15:59:26.720  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:00:39.997  INFO 5656 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 16:00:39.997  INFO 5656 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-02-18 16:00:39.997  INFO 5656 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-02-18 16:00:40.231  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 5656 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 16:00:40.231 DEBUG 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 16:00:40.231  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 16:00:40.421  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 16:00:40.442  INFO 5656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 5 JPA repository interfaces.
+2022-02-18 16:00:40.581  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 16:00:40.581  INFO 5656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 16:00:40.581  INFO 5656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 16:00:40.589  INFO 5656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 16:00:40.589  INFO 5656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 358 ms
+2022-02-18 16:00:40.630  INFO 5656 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 16:00:40.632  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-02-18 16:00:40.648  INFO 5656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-02-18 16:00:40.649  INFO 5656 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 16:00:40.745  INFO 5656 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 16:00:40.745  INFO 5656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 16:00:41.076  WARN 5656 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 16:00:41.199  INFO 5656 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 16:00:41.330  INFO 5656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 16:00:41.339  INFO 5656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 16:00:41.343  INFO 5656 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 1.141 seconds (JVM running for 142.702)
+2022-02-18 16:00:41.344  INFO 5656 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-18 16:00:43.624  INFO 5656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 16:00:43.625  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 16:00:43.625  INFO 5656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-18 16:00:43.629  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:00:43.647  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 16:00:43.653  WARN 5656 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 16:00:43.659  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:00:43.799  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:00:43.806  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:01:00.102  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:01:00.117  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:01:00.358  INFO 5656 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:01:00.363  INFO 5656 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:01:06.566  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/84', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[84, {}]} 
+2022-02-18 16:01:06.598  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:01:06.728  INFO 5656 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:01:06.729  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/84', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[84, {}]} 
+2022-02-18 16:01:06.736  INFO 5656 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:01:06.748  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:08:22.888  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:08:22.904  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:08:23.070  INFO 5656 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:08:23.074  INFO 5656 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:08:24.990  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 16:08:25.015  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:08:25.240  INFO 5656 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:08:25.245  INFO 5656 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:08:30.307  INFO 5656 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/21', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 21, {}]} 
+2022-02-18 16:08:30.318  INFO 5656 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:08:30.468  INFO 5656 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:08:30.474  INFO 5656 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:08:35.370  INFO 5656 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/74', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 74, {}]} 
+2022-02-18 16:08:35.381  INFO 5656 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:08:35.527  INFO 5656 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:08:35.530  INFO 5656 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:08:39.361  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/73', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 73, {}]} 
+2022-02-18 16:08:39.373  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:08:39.496  INFO 5656 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:08:39.501  INFO 5656 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:00.764  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/73', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 73, {}]} 
+2022-02-18 16:09:00.772  INFO 5656 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:09:00.996  INFO 5656 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:01.000  INFO 5656 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:03.511  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/74', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 74, {}]} 
+2022-02-18 16:09:03.519  INFO 5656 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:09:03.655  INFO 5656 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:03.660  INFO 5656 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:10.386  INFO 5656 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/22', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 22, {}]} 
+2022-02-18 16:09:10.395  INFO 5656 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:09:10.517  INFO 5656 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:10.521  INFO 5656 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:14.503  INFO 5656 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/75', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 75, {}]} 
+2022-02-18 16:09:14.510  INFO 5656 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:09:14.635  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:14.639  INFO 5656 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:35.222  INFO 5656 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 16:09:35.238  INFO 5656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-02-18 16:09:35.238  INFO 5656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-02-18 16:09:38.491  INFO 16764 --- [restartedMain] com.wcw.forum.ForumApplication           : Starting ForumApplication using Java 1.8.0_201 on LAPTOP-D92C40L9 with PID 16764 (C:\Users\User\IdeaProjects\forum\target\classes started by User in C:\Users\User\IdeaProjects\forum)
+2022-02-18 16:09:38.491 DEBUG 16764 --- [restartedMain] com.wcw.forum.ForumApplication           : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-18 16:09:38.491  INFO 16764 --- [restartedMain] com.wcw.forum.ForumApplication           : The following profiles are active: dev
+2022-02-18 16:09:38.522  INFO 16764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-18 16:09:38.522  INFO 16764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-18 16:09:39.069  INFO 16764 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-18 16:09:39.116  INFO 16764 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2022-02-18 16:09:39.662  INFO 16764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 16:09:39.662  INFO 16764 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 16:09:39.662  INFO 16764 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-18 16:09:39.787  INFO 16764 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 16:09:39.787  INFO 16764 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1265 ms
+2022-02-18 16:09:39.897  INFO 16764 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-18 16:09:39.928  INFO 16764 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-18 16:09:40.022  INFO 16764 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-18 16:09:40.084  INFO 16764 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 16:09:40.350  INFO 16764 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 16:09:40.366  INFO 16764 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-02-18 16:09:40.904  INFO 16764 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-18 16:09:40.919  INFO 16764 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 16:09:41.685  WARN 16764 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-18 16:09:41.872  INFO 16764 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 16:09:42.107  INFO 16764 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-18 16:09:42.138  INFO 16764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 16:09:42.138  INFO 16764 --- [restartedMain] com.wcw.forum.ForumApplication           : Started ForumApplication in 4.081 seconds (JVM running for 4.697)
+2022-02-18 16:09:52.141  INFO 16764 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 16:09:52.142  INFO 16764 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 16:09:52.142  INFO 16764 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-18 16:09:52.165  INFO 16764 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:09:52.240  WARN 16764 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 16:09:52.250  WARN 16764 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.articles.size]; use collection function syntax instead [size(t.articles)].
+2022-02-18 16:09:52.259  INFO 16764 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:09:52.695  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:52.703  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:53.908  INFO 16764 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/74', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 74, {}]} 
+2022-02-18 16:09:53.937  INFO 16764 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:09:54.175  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:54.180  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:09:59.186  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/tags/18', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 18, {}]} 
+2022-02-18 16:09:59.197  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return tag----
+2022-02-18 16:09:59.410  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:09:59.415  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:05.758  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/-1', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]} 
+2022-02-18 16:10:05.787  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 16:10:05.998  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:06.004  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:09.891  INFO 16764 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/25', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 25, {}]} 
+2022-02-18 16:10:09.904  INFO 16764 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 16:10:10.119  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:10.125  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:12.844  INFO 16764 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/types/26', ip='10.0.0.185', classMethod='class com.wcw.forum.web.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], 26, {}]} 
+2022-02-18 16:10:12.852  INFO 16764 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return type----
+2022-02-18 16:10:13.070  INFO 16764 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:13.075  INFO 16764 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:21.595  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[85, {}]} 
+2022-02-18 16:10:21.612  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:10:21.751  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:21.751  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[85, {}]} 
+2022-02-18 16:10:21.757  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:21.776  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:10:52.923  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:52.930  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:54.099  INFO 16764 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/122', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[122, {}]} 
+2022-02-18 16:10:54.110  INFO 16764 --- [http-nio-8080-exec-1] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:10:54.367  INFO 16764 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:54.367  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/122', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[122, {}]} 
+2022-02-18 16:10:54.369  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:10:54.372  INFO 16764 --- [http-nio-8080-exec-7] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:10:57.995  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/122', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[122, {}]} 
+2022-02-18 16:10:58.007  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:10:58.127  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:10:58.127  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/122', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[122, {}]} 
+2022-02-18 16:10:58.128  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:10:58.131  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:17:38.158  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:17:38.177  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:17:38.310  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:17:38.316  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:17:40.084  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:17:40.094  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:17:40.312  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:17:40.313  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 16:17:40.318  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:17:40.342  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:22:29.904  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:22:29.916  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:22:30.043  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:22:30.043  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 16:22:30.047  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:22:30.071  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:23:44.658  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:23:44.668  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:23:44.844  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:23:44.849  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:23:45.799  INFO 16764 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[85, {}]} 
+2022-02-18 16:23:45.807  INFO 16764 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:23:46.015  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/85', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[85, {}]} 
+2022-02-18 16:23:46.015  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:23:46.020  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:23:46.020  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:24:00.903  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]} 
+2022-02-18 16:24:00.916  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return index----
+2022-02-18 16:24:01.070  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:24:01.074  INFO 16764 --- [http-nio-8080-exec-8] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:24:02.000  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:24:02.009  INFO 16764 --- [http-nio-8080-exec-4] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:24:02.213  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 16:24:02.213  INFO 16764 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:24:02.219  INFO 16764 --- [http-nio-8080-exec-5] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:24:02.239  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:25:01.132  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:25:01.142  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:25:01.270  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:25:01.270  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 16:25:01.277  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:25:01.297  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:25:19.753  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:25:19.763  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:25:19.876  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:25:19.884  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:25:36.125  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:25:36.134  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:25:36.280  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:25:36.285  INFO 16764 --- [http-nio-8080-exec-9] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:25:56.131  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:25:56.140  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:25:56.248  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:25:56.252  INFO 16764 --- [http-nio-8080-exec-6] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:26:10.360  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/article/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.article', args=[86, {}]} 
+2022-02-18 16:26:10.368  INFO 16764 --- [http-nio-8080-exec-10] com.wcw.forum.aspect.LogAspect           : ----Return article----
+2022-02-18 16:26:10.523  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/comments/86', ip='10.0.0.185', classMethod='class com.wcw.forum.web.CommentController.comments', args=[86, {}]} 
+2022-02-18 16:26:10.523  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : requestLog : RequestLog{url='http://10.0.0.185:8080/footer', ip='10.0.0.185', classMethod='class com.wcw.forum.web.IndexController.footer', args=[{}]} 
+2022-02-18 16:26:10.527  INFO 16764 --- [http-nio-8080-exec-2] com.wcw.forum.aspect.LogAspect           : ----Return _fragments :: mostView----
+2022-02-18 16:26:10.547  INFO 16764 --- [http-nio-8080-exec-3] com.wcw.forum.aspect.LogAspect           : ----Return article :: commentList----
+2022-02-18 16:44:49.850  INFO 16764 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-18 16:44:49.853  INFO 16764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 16:44:49.859  INFO 16764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
